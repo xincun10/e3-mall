@@ -1,11 +1,11 @@
 com\cara\mapper\TbOrderItemMapper.class
-com\cara\mapper\TbItemDescMapper.class
-com\cara\mapper\TbItemCatMapper.class
 com\cara\mapper\TbOrderMapper.class
 com\cara\mapper\TbItemParamItemMapper.class
 com\cara\mapper\TbUserMapper.class
-com\cara\mapper\TbOrderShippingMapper.class
 com\cara\mapper\TbItemMapper.class
 com\cara\mapper\TbContentCategoryMapper.class
+com\cara\mapper\TbItemDescMapper.class
+com\cara\mapper\TbItemCatMapper.class
+com\cara\mapper\TbOrderShippingMapper.class
 com\cara\mapper\TbItemParamMapper.class
 com\cara\mapper\TbContentMapper.class

@@ -8,8 +8,8 @@
   	<!-- 集中管理版本号 -->
 	<properties>
 		<!-- 数据库相关 -->
-		<mysql.version>5.1.32</mysql.version>
-		<druid.version>1.0.9</druid.version>
+		<mysql.version>8.0.11</mysql.version>
+		<druid.version>1.0.16</druid.version>
 		<mybatis.version>3.2.8</mybatis.version>
 		<pagehelper.version>3.4.2</pagehelper.version>
 		<!-- mybatis与spring整合包 -->
@@ -262,15 +262,11 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.2</version>
-				<!-- <configuration>
+				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
 					<encoding>UTF-8</encoding>
-				</configuration> -->
-				<configuration>
-			        <fork>true</fork>
-			        <executable>D:\java\jdk\bin\javac.exe</executable>
-			    </configuration>
+				</configuration>
 			</plugin>
 
 		</plugins>
