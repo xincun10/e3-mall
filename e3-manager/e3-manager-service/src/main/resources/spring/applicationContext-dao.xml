@@ -20,7 +20,6 @@
 		<property name="password" value="${db.password}" />
 		<property name="maxActive" value="${db.maxActive}" />
 		<property name="minIdle" value="${db.minIdle}" />
-		<property name="validationQuery" value="${db.validationQuery}" />
 	</bean>
 
 	<!-- SqlSessionFactory -->
