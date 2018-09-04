@@ -17,6 +17,9 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<!-- 配置资源映射 -->
+	<mvc:resources location="/css/" mapping="/css/**"/>
+	<mvc:resources location="/js/" mapping="/js/**"/>
 	
 	<!-- 消费dubbo服务 -->
 	<!-- 消费方应用信息，用于计算依赖关系 -->
