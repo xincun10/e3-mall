@@ -21,6 +21,6 @@
 	<dubbo:protocol name="dubbo" port="20880" />
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="com.cara.service.ItemService"
-		ref="itemServiceImpl" />
+		ref="itemServiceImpl" timeout="600000" />
 
 </beans>
