@@ -18,9 +18,10 @@ public class PageController {
 		//返回视图
 		return "index";
 	}
-	@RequestMapping("/{page}")
+	@RequestMapping("/system/{page}")
 	public String showPage(@PathVariable String page)
 	{
+		//page的值和jsp页面的名称是一致的，比如：item-add
 		return page;
 	}
 }
