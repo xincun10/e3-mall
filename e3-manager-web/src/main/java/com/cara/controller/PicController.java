@@ -4,12 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.cara.common.utils.FastDFSClient;
+import com.cara.common.utils.JsonUtils;
 
 @RequestMapping("/pic")
 @Controller
@@ -18,12 +20,17 @@ public class PicController {
 	@Value("${IMAGE_SERVER_URL}")
 	private String IMAGE_SERVER_URL;
 
-	@RequestMapping("/upload")
+	@RequestMapping(value="/upload", produces=MediaType.TEXT_PLAIN_VALUE+";charset=utf-8")
 	@ResponseBody
-	public Map upload(MultipartFile uploadFile)
+	public String upload(MultipartFile uploadFile)
 	{
 		Map map = new HashMap<>();		
 		try {
+			if(uploadFile == null ){
+				map.put("error", 1);
+				map.put("message", "上传文件为空，上传失败");
+				return JsonUtils.objectToJson(map);
+			}
 			//把图片上传到图片服务器
 			FastDFSClient client = new FastDFSClient("classpath:conf/fdfs_client.conf");
 			//获取上传文件的扩展名
@@ -36,13 +43,13 @@ public class PicController {
 			//将结果封装到map中返回
 			map.put("error", 0);
 			map.put("url", url);
-			return map;
+			return JsonUtils.objectToJson(map);
 		} catch (Exception e) {
 			e.printStackTrace();
 			//上传失败
 			map.put("error", 1);
 			map.put("message", "图片上传失败！");
-			return map;
+			return JsonUtils.objectToJson(map);
 		}		
 	}
 }
