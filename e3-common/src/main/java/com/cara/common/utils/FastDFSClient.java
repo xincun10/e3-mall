@@ -19,7 +19,7 @@ public class FastDFSClient {
     	{
 	        //conf直接写相对于classpath的位置，不需要写classpath:
 	        conf = conf.replace("classpath:", 
-	        		this.getClass().getClassLoader().getResource("/").getPath());
+	        		this.getClass().getResource("/").getPath());
     	}
         System.out.println(conf);
         ClientGlobal.init(conf);

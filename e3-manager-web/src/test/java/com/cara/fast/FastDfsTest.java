@@ -11,7 +11,7 @@ import com.cara.common.utils.FastDFSClient;
 
 public class FastDfsTest {
 	// 客户端配置文件
-	private String conf_filename = "/fdfs/fdfs_client.conf";
+	private String conf_filename = "/conf/fdfs_client.conf";
 	// 本地文件，要上传的文件
 	private String filename = "I:\\pictures\\老田\\hebe.gif";
 
@@ -44,8 +44,9 @@ public class FastDfsTest {
 	@Test
 	public void testFastDfsClient() throws Exception
 	{
-		String url = this.getClass().getResource(conf_filename).getPath();
-		FastDFSClient fastDFSClient = new FastDFSClient(url);
+//		String url = this.getClass().getResource(conf_filename).getPath();
+//		FastDFSClient fastDFSClient = new FastDFSClient(url);
+		FastDFSClient fastDFSClient = new FastDFSClient("classpath:conf/fdfs_client.conf");
 		String string = fastDFSClient.uploadFile(filename, "gif");
 		System.out.println(string);
 	}
