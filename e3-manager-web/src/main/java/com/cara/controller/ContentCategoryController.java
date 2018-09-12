@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cara.common.pojo.E3Result;
 import com.cara.common.pojo.EasyUITreeNode;
 import com.cara.content.service.ContentCategoryService;
 
@@ -24,5 +25,12 @@ public class ContentCategoryController {
 			@RequestParam(value="id", defaultValue="0")Long parentId)
 	{
 		return service.queryCategoryList(parentId);
+	}
+	
+	@RequestMapping("/create")
+	@ResponseBody
+	public E3Result create(Long parentId, String name)
+	{
+		return service.save(parentId, name);
 	}
 }
