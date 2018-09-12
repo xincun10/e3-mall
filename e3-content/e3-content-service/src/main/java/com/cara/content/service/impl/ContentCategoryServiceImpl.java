@@ -72,4 +72,14 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 		return E3Result.ok(category);
 	}
 
+	@Override
+	public E3Result updateContentCategory(Long id, String name) {
+		TbContentCategory category = new TbContentCategory();
+		category.setId(id);
+		category.setName(name);
+		mapper.updateByPrimaryKeySelective(category);
+		
+		return E3Result.ok();
+	}
+
 }

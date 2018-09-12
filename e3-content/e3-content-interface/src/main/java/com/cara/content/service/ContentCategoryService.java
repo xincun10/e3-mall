@@ -11,4 +11,6 @@ public interface ContentCategoryService {
 	public List<EasyUITreeNode> queryCategoryList(Long parentId);
 	//添加内容分类
 	public E3Result save(Long parentId, String name);
+	//重命名分类
+	public E3Result updateContentCategory(Long id, String name);
 }

@@ -33,4 +33,11 @@ public class ContentCategoryController {
 	{
 		return service.save(parentId, name);
 	}
+	
+	@RequestMapping("/update")
+	@ResponseBody
+	public E3Result update(@RequestParam("id")Long parentId, String name)
+	{
+		return service.updateContentCategory(parentId, name);
+	}
 }
