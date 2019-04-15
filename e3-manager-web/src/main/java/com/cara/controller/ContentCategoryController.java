@@ -40,4 +40,12 @@ public class ContentCategoryController {
 	{
 		return service.updateContentCategory(parentId, name);
 	}
+	
+	@RequestMapping("/delete")
+	@ResponseBody
+	public String delete(Long parentId, Long id)
+	{
+		service.deleteContentCategory(parentId, id);
+		return "OK";
+	}
 }

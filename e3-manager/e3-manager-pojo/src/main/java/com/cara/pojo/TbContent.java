@@ -4,7 +4,14 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class TbContent implements Serializable {
-    private Long id;
+    @Override
+	public String toString() {
+		return "TbContent [id=" + id + ", categoryId=" + categoryId + ", title=" + title + ", subTitle=" + subTitle
+				+ ", titleDesc=" + titleDesc + ", url=" + url + ", pic=" + pic + ", pic2=" + pic2 + ", created="
+				+ created + ", updated=" + updated + ", content=" + content + "]";
+	}
+
+	private Long id;
 
     private Long categoryId;
 

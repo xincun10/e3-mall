@@ -82,4 +82,42 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 		return E3Result.ok();
 	}
 
+	@Override
+	public void deleteContentCategory(Long parentId, Long id) {
+		//如果有子分类，则不允许删除。
+		TbContentCategory category = mapper.selectByPrimaryKey(id);
+		if((category!=null) && (!category.getIsParent()))
+		{
+			mapper.deleteByPrimaryKey(id);
+			/*
+	         * 查看删除节点的父节点还有没有其他子节点，如果没有子节点，将其设置为子节点
+	         */
+			TbContentCategory parent = mapper.selectByPrimaryKey(parentId);
+			//判断是否为父节点
+	        if(!this.haveChild(parent)){
+	            //修改其isPrent属性为false
+	            parent.setIsParent(false);
+	            //保存修改
+	            mapper.updateByPrimaryKeySelective(parent);
+	        }
+		}
+		
+	}
+	
+	/*
+     * 判断内容分类是否为父节点（即是否含有子节点）
+     */
+    private boolean haveChild(TbContentCategory parent) {
+        //封装查询条件
+        TbContentCategoryExample example = new TbContentCategoryExample();
+        example.createCriteria().andParentIdEqualTo(parent.getId());
+        //执行查询
+        List<TbContentCategory> categories = mapper.selectByExample(example);
+        //判断是否为空且长度大于0，如果为空或不大于0，则表示不是父节点
+        if(categories != null && categories.size() > 0){
+            return true;
+        }
+        return false;
+    }
+
 }

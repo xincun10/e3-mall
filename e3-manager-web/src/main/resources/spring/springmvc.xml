@@ -41,5 +41,7 @@
 	<dubbo:reference interface="com.cara.service.ItemCatService" id="itemCatService" />
 	<!-- 内容分类服务接口 -->
 	<dubbo:reference interface="com.cara.content.service.ContentCategoryService" id="contentCategoryService" />
-
+	<!-- 内容服务接口 -->
+	<dubbo:reference interface="com.cara.content.service.ContentService" id="contentService" />
+	
 </beans>

@@ -24,5 +24,8 @@
 	<!-- 内容分类服务 -->
 	<dubbo:service interface="com.cara.content.service.ContentCategoryService"
 		ref="contentCategoryServiceImpl" timeout="600000" />
+	<!-- 内容服务 -->
+	<dubbo:service interface="com.cara.content.service.ContentService"
+		ref="contentServiceImpl" timeout="600000" />
 	
 </beans>

@@ -13,4 +13,6 @@ public interface ContentCategoryService {
 	public E3Result save(Long parentId, String name);
 	//重命名分类
 	public E3Result updateContentCategory(Long id, String name);
+	//删除分类
+	public void deleteContentCategory(Long parentId, Long id);
 }
