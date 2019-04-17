@@ -77,4 +77,13 @@ public class ContentServiceImpl implements ContentService{
 		return E3Result.ok();
 	}
 
+	@Override
+	public List<TbContent> queryContentList(Long categoryId) {
+		//根据分类Id查询内容列表
+		TbContentExample example = new TbContentExample();
+		example.createCriteria().andCategoryIdEqualTo(categoryId);
+		List<TbContent> list = mapper.selectByExample(example);
+		return list;
+	}
+
 }

@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
-	<!-- 加载配置文件 -->
+	<!-- 加载配置文件,placeholder只有一个生效 -->
 	<context:property-placeholder location="classpath:conf/*.properties" />
 	
 	<!-- 配置包扫描器
@@ -33,6 +33,6 @@
 	<dubbo:application name="e3-portal-web" />
 	<!-- 使用zookeeper注册中心暴露服务地址 -->
 	<dubbo:registry protocol="zookeeper" address="192.168.42.128:2181,192.168.42.131:2181,192.168.42.132:2181"/>
-	<!--<dubbo:reference interface="com.cara.service.ItemService" id="itemService" />
-	  -->
+	<!--消费服务 -->
+	<dubbo:reference interface="com.cara.content.service.ContentService" id="contentService" />
 </beans>
