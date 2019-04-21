@@ -70,7 +70,7 @@ var contentListToolbar = [{
     		return ;
     	}
 		E3MALL.createWindow({
-			url : "/content-edit",
+			url : "/system/content-edit",
 			onLoad : function(){
 				var data = $("#contentList").datagrid("getSelections")[0];
 				$("#contentEditForm").form("load",data);
