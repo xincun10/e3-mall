@@ -1,6 +1,8 @@
 package com.cara.common.pojo;
 
-public class AdResult {
+import java.io.Serializable;
+
+public class AdResult implements Serializable{
 
 	//首页广告位展示所需内容
 	private int width;

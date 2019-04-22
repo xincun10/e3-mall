@@ -34,7 +34,7 @@
 	<!-- 批量配置mapper代理类 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 配置扫描的包 -->
-		<property name="basePackage" value="com.cara.mapper"></property>
+		<property name="basePackage" value="com.cara.mapper,com.cara.search.mapper"></property>
 	</bean>
 
 </beans>

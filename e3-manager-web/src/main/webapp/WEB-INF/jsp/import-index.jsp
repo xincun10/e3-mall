@@ -3,7 +3,7 @@
 <jsp:include page="${pageContext.request.contextPath }/layout/inc.jsp"></jsp:include>
 <script type="text/javascript">
 	function importAll() {
-		$.post("/index/importAll", '', function(data) {
+		$.post("/index/item/import", '', function(data) {
 			if (data.status == 200) {
 				$.messager.alert('提示', '导入成功!');
 			}

@@ -33,7 +33,7 @@
 		<!-- redis客户端 -->
 		<jedis.version>2.9.0</jedis.version>
 		<!-- solr客户端 -->
-		<solrj.version>4.10.3</solrj.version>
+		<solrj.version>4.7.0</solrj.version>
 		<!-- quartz时间任务 -->
 		<quartz.version>2.2.2</quartz.version>
 		<!-- servlet相关 -->

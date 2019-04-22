@@ -43,5 +43,6 @@
 	<dubbo:reference interface="com.cara.content.service.ContentCategoryService" id="contentCategoryService" />
 	<!-- 内容服务接口 -->
 	<dubbo:reference interface="com.cara.content.service.ContentService" id="contentService" />
-	
+	<!-- 搜索服务接口 -->
+	<dubbo:reference interface="com.cara.search.service.SearchItemService" id="searchItemService"/>
 </beans>
