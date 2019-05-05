@@ -49,4 +49,14 @@ public class SearchItem implements Serializable {
 		this.category_name = category_name;
 	}
 
+	//如果有图片的话返回数组
+	public String[] getImages()
+	{
+		if(image!=null && !"".equals(image.split(",")))
+		{
+			String[] strings = image.split(",");
+			return strings;
+		}
+		return null;
+	}
 }

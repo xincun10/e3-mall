@@ -10,8 +10,15 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-	<bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
+	<!-- 单机版solrj -->
+	<!-- <bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
 		<constructor-arg index="0" value="http://192.168.42.128:8080/solr/collection1"></constructor-arg>
+	</bean> -->
+	
+	<!-- 集群版solrj -->
+	<bean id="cloudSolrServer" class="org.apache.solr.client.solrj.impl.CloudSolrServer">
+		<constructor-arg index="0" value="192.168.42.130:2281,192.168.42.130:2282,192.168.42.130:2283"></constructor-arg>
+		<property name="defaultCollection" value="collection2"></property>
 	</bean>
 	
 </beans>

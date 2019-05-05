@@ -32,7 +32,7 @@
 	<!-- 消费方应用信息，用于计算依赖关系 -->
 	<dubbo:application name="e3-portal-web" />
 	<!-- 使用zookeeper注册中心暴露服务地址 -->
-	<dubbo:registry protocol="zookeeper" address="192.168.42.128:2181,192.168.42.131:2181,192.168.42.132:2181"/>
+	<dubbo:registry protocol="zookeeper" address="192.168.42.130:2281,192.168.42.130:2282,192.168.42.130:2283"/>
 	<!--消费服务 -->
 	<dubbo:reference interface="com.cara.content.service.ContentService" id="contentService" />
 </beans>
